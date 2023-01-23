@@ -19,7 +19,7 @@ function SwitchProducts({setSwitchName}) {
           return (
             <>
               <li key={idx}
-                className={`my-1 mx-1 px-10 py-4 cursor-pointer ${
+                className={`my-1 mx-1 px-4 md:px-10 py-1 md:py-4 cursor-pointer ${
                   active === switches.route
                     ? 'text-primary-400 bg-secondary-50'
                     : 'text-secondary-200 bg-white'

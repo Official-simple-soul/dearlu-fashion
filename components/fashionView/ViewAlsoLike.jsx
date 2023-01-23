@@ -10,16 +10,17 @@ import 'swiper/css/free-mode';
 import 'swiper/css/navigation';
 
 function ViewAlsoLike({ data }) {
-
   const alsoLike = Data().filter((item) => item.category === data.category);
 
   return (
     <div className="pt-12 pb-40">
       <div className="font-bold flex justify-between items-center py-4">
         <h1 className="text-primary-500">You may also like</h1>
-        <h1 className="text-primary-500 border-b border-primary-500">
-          show more
-        </h1>
+        <Link href={'/products'}>
+          <h1 className="text-primary-500 border-b border-primary-500">
+            show more
+          </h1>
+        </Link>
       </div>
       <Swiper
         breakpoints={{
@@ -38,22 +39,23 @@ function ViewAlsoLike({ data }) {
         modules={[FreeMode, Navigation]}
         className="mySwiper"
       >
-        {
-        alsoLike?.map((data) => {
+        {alsoLike?.map((data) => {
           return (
             <div className="f" key={data.id}>
-             <SwiperSlide>
-             <Link href={`/view/${data.id}`}><div
-                  className="flex cursor-pointer justify-center items-center py-4 shadow-lg transition-all ease-in-out duration-500"
-                  key={data.id}
-                >
-                  <div className="px-3">
-                    <div className="h-80 w-80 relative">
-                      <Image src={data.img} alt="" fill className="" />
+              <SwiperSlide>
+                <Link href={`/view/${data.id}`}>
+                  <div
+                    className="flex cursor-pointer justify-center items-center py-4 shadow-lg transition-all ease-in-out duration-500"
+                    key={data.id}
+                  >
+                    <div className="px-3">
+                      <div className="h-40 md:h-80 w-32 md:w-80 relative">
+                        <Image src={data.img} alt="" fill className="" />
+                      </div>
+                      <h1 className="mt-3">{data.title}</h1>
                     </div>
-                    <h1 className="mt-3">{data.title}</h1>
                   </div>
-                </div></Link> 
+                </Link>
               </SwiperSlide>
             </div>
           );

@@ -41,11 +41,11 @@ return (
             <div className="f" key={data.id}>
              <SwiperSlide>
              <Link href={`/view/${data.id}`}><div
-                  className="flex cursor-pointer justify-center items-center py-4 shadow-lg transition-all ease-in-out duration-500"
+                  className="flex cursor-pointer justify-center items-center py-2 md:py-4 md:px-4 shadow-lg transition-all ease-in-out duration-500"
                   key={data.id}
                 >
-                  <div className="px-3">
-                    <div className="h-28 w-28 relative">
+                  <div className="w-32 h-[125px] md:h-40">
+                    <div className="h-20 md:h-28 md:w-28 relative">
                       <Image src={data.img} alt="" fill className="" />
                     </div>
                     <h1 className="mt-3">{data.title}</h1>

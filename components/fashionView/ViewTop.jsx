@@ -13,11 +13,11 @@ function ViewTop({ img, title, price, id, data }) {
   };
  
   return (
-    <div className="grid grid-cols-2 gap-4 py-8" key={id}>
-      <div className="relative h-[477px] w-full bg-white">
+    <div className="grid md:grid-cols-2 gap-4 py-8" key={id}>
+      <div className="relative h-64 md:h-[477px] w-full bg-white">
         <Image src={img} fill alt={title} />
       </div>
-      <div className="right px-24">
+      <div className="right md:px-24">
         <h1 className="text-primary-400 text-4xl font-bold">{title}</h1>
         <h1 className="text-2xl my-3 text-primary-400">N {price}</h1>
         <div className="other">
@@ -45,12 +45,12 @@ function ViewTop({ img, title, price, id, data }) {
           </div>
           <div className="flex items-center justify-between">
             <button
-              className="bg-primary-400 text-white px-8 py-1 rounded-md"
+              className="text-sm md:text-lg bg-primary-400 text-white px-8 py-1 rounded-md"
               onClick={() => handleAdd(data)}
             >
               Add to cart
             </button>
-            <Link href={'/checkout'}><button onClick={()=>setCartSingle(data)} className="w-40 bg-primary-400 text-white rounded-md py-1">
+            <Link href={'/checkout'}><button onClick={()=>setCartSingle(data)} className="w-40 text-sm md:text-lg bg-primary-400 text-white rounded-md py-1">
               Buy now
             </button></Link>
           </div>

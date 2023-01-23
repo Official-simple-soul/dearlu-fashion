@@ -10,7 +10,7 @@ function ViewInfo() {
 
   return (
     <div className='pt-20'>
-      <div className="flex justify-center items-center pb-3">
+      <div className="md:flex justify-center items-center pb-3">
         {Nav.map((nav) => {
           return (
             <>
@@ -19,7 +19,7 @@ function ViewInfo() {
                   active === nav.title
                     ? 'border-primary-500 text-primary-400'
                     : 'border-scondary-100 text-secondary-100'
-                } pr-48 pl-4`}
+                } md:pr-48 pl-4`}
                 onClick={(e) => setActive(e.currentTarget.innerHTML)}
               >
                 {nav.title}
@@ -52,7 +52,7 @@ function ViewInfo() {
             :
             active===Nav[1].title?
             <>
-                 <p  className='text-[yellow] mb-8'>
+                 <p  className='text-[purple] mb-8'>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut

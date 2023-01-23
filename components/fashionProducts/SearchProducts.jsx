@@ -27,7 +27,7 @@ const {setIsLoading} = useGlobalContext(false)
     setSearch(newData.length > 0 ? newData : 'Search not found');
   setIsLoading(true)
   };
-  
+
   useEffect(() => {
     setTimeout(()=>{
       setIsLoading(false)
@@ -42,13 +42,13 @@ const {setIsLoading} = useGlobalContext(false)
             type="text"
             onChange={(e) => setSearchValue(e.target.value)}
             placeholder="Search for products, brands...."
-            className="text-black w-40 md:w-[600px] bg-white h-12 px-3 focus:outline-none rounded-l-md"
+            className="text-black w-40 md:w-[600px] bg-white h-8 md:h-12 px-3 focus:outline-none rounded-l-md"
           />
           <select
             name=""
             id=""
             onChange={(e) => setOptionValue(e.target.value)}
-            className="w-32 md:w-60 bg-white h-12 px-3 focus:outline-none text-black"
+            className="w-32 md:w-60 bg-white h-8 md:h-12 px-3 focus:outline-none text-black"
           >
             <option value="All Categories">All Categories</option>
             <option value="Shoe">Shoes</option>
@@ -58,7 +58,7 @@ const {setIsLoading} = useGlobalContext(false)
             <option value="Clothes">Clothes</option>
             <option value="Wristwatches">Wristwatches</option>
           </select>
-          <button className="h-12 bg-primary-200 px-4 rounded-r-md">
+          <button className="h-8 md:h-12 bg-primary-200 px-4 rounded-r-md">
             <FontAwesomeIcon icon={faSearch} />
           </button>
         </div>

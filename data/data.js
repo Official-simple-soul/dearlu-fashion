@@ -6,7 +6,7 @@ function Data() {
       id: 1,
       title: 'Oleguer Shoe',
       category: 'Shoe',
-      img: '/Images/categories/shoes.png',
+      img: '/Images/categories/addidasshoe.png',
       price: 12000,
       quantity: 1,
     },

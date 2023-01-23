@@ -56,7 +56,7 @@ function Footer() {
           value={email}
           onChange={(e)=> setEmail(e.target.value)}
           placeholder="Enter e-mail address"
-          className='bg-white block w-80 md:w-96 h-10 mb-4 px-3' />
+          className='bg-white block w-64 md:w-96 h-10 mb-4 px-3' />
           <button type='submit' className='rounded-md px-8 py-2 text-white bg-primary-300'>Subscribe</button>
         </form>
       </div>

@@ -209,3 +209,15 @@ a {
   from {transform: rotate(0deg);}
   to {transform: rotate(359deg);}
 }
+
+@media (max-width: 450px) {
+  .swiper-button-next {
+    padding: 12px !important;
+  }
+  .swiper-button-prev {
+    padding: 12px !important;
+  }
+  :root {
+    --swiper-navigation-size:14px !important
+  }
+}
