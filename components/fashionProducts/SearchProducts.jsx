@@ -35,19 +35,19 @@ const {setIsLoading} = useGlobalContext(false)
   
   return (
     <div className="bg-primary-400 flex justify-center py-5">
-      <form action="" onSubmit={handleSubmit}>
+      <form action="" onSubmit={handleSubmit} className=''>
         <div className="flex items-center">
           <input
             type="text"
             onChange={(e) => setSearchValue(e.target.value)}
             placeholder="Search for products, brands...."
-            className="text-black md:w-[600px] bg-white h-12 px-3 focus:outline-none rounded-l-md"
+            className="text-black w-40 md:w-[600px] bg-white h-12 px-3 focus:outline-none rounded-l-md"
           />
           <select
             name=""
             id=""
             onChange={(e) => setOptionValue(e.target.value)}
-            className="md:w-60 bg-white h-12 px-3 focus:outline-none text-black"
+            className="w-32 md:w-60 bg-white h-12 px-3 focus:outline-none text-black"
           >
             <option value="All Categories">All Categories</option>
             <option value="Shoe">Shoes</option>
