@@ -20,7 +20,7 @@ const [showModal, setShowModal] = useState()
     <MainNav />
       <div className="pb-20 pt-[110px] bg-white">
         <div className="relative h-[630px]">
-          <Image src="/images/header/topheader.png" alt="top header" fill />
+          <Image src='/Images/logo/DearLu.png' alt="top header" fill />
           <div className="text absolute bottom-40 left-10">
             <h1 className="text-6xl font-bold">New</h1>
             <h1 className="text-6xl font-bold my-5">Collections</h1>
