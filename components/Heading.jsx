@@ -18,7 +18,7 @@ function Heading() {
           <FontAwesomeIcon icon={menu?faTimes:faBars} className="text-primary-500 cursor-pointer" onClick={()=>setMenu(!menu)}/>
         </div>
         <Link href={'/'}><Image
-        src={'/Images/logo/DearLu.png'}
+        src={'/images/logo/DearLu.png'}
         width={100}
         height={100}
         alt='dearl logo'
