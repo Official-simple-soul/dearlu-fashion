@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
+import { useGlobalContext } from '../../context/context';
 
 function SwitchProducts({setSwitchName}) {
   const [active, setActive] = useState('Shoes');
-  
+  const {setSearch} = useGlobalContext()
   
   const Switch = [
     { route: 'Shoe', id: 1 },
@@ -29,6 +30,7 @@ function SwitchProducts({setSwitchName}) {
                 onClick={(e) => {
                   setActive(e.currentTarget.innerHTML)
                   setSwitchName(switches.route)
+                  setSearch([])
                 }}
               >
                 {switches.route}

@@ -44,36 +44,14 @@ function ProductView({ switchName }) {
             const { price, img, title, id } = data;
             return (
               <>
-                {/* <div className="card text-black" key={data.id}>
-                  <Link href={`/view`}>
-                    <div className="relative h-80 w-full mb-4">
-                      <Image
-                        src={data.img}
-                        alt=""
-                        fill
-                        className="bg-secondary-50 p-5"
-                      />
-                    </div>
-                  </Link>
-                  <h1>{data.title}</h1>
-                  <h1 className="my-3 text-primary-300">N {data.price}</h1>
-                  <div className="mb-4 flex items-center justify-between">
-                    <p className="flex items-center">
-                      <AiFillStar className="text-[#FF9800] mr-2" /> 4.3{' '}
-                      <span className="text-secondary-100 ml-2">
-                        (30 Reviews)
-                      </span>
-                    </p>
-                    <AiOutlineHeart className="text-2xl mr-8" />
-                  </div>
-                  <button
-                    className="bg-primary-400 text-white px-4 py-1 rounded-md"
-                    onClick={() => handleAdd(data)}
-                  >
-                    Add to cart
-                  </button>
-                </div> */}
-                <FashionRow title={title} price={price} img={img} id={id} handleAdd={handleAdd} data={data}/>
+                <FashionRow
+                  title={title}
+                  price={price}
+                  img={img}
+                  id={id}
+                  handleAdd={handleAdd}
+                  data={data}
+                />
               </>
             );
           })
@@ -82,7 +60,14 @@ function ProductView({ switchName }) {
             const { price, img, title, id } = data;
             return (
               <>
-                <FashionRow title={title} price={price} img={img} id={id} handleAdd={handleAdd} data={data}/>
+                <FashionRow
+                  title={title}
+                  price={price}
+                  img={img}
+                  id={id}
+                  handleAdd={handleAdd}
+                  data={data}
+                />
               </>
             );
           })
