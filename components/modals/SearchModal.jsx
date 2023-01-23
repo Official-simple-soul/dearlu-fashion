@@ -47,22 +47,22 @@ const searchResult = Data().filter(item=> item.title.toLowerCase().includes(sear
                         return (
                             <>
                             <div
-      className="bg-secondary-50 shadow-lg mb-2 px-10 flex items-center text-black justify-between  bg-[#FDFDFD] space-x-12 min-w-[400px]"
+      className="shadow-lg mb-2 px-10 flex items-center text-black justify-between  bg-[#FDFDFD] md:space-x-12 min-w-[400px]"
       key={id}
     >
       <div className="left flex items-center space-x-4">
         
-        <div className="relative h-40 w-40">
+        <div className="relative h-24 md:h-40 w-24 md:w-40">
           <Image src={img} alt={title} fill />
         </div>
         <div className="text-black">
-          <h1 className="text-3xl font-bold">{title}</h1>
-          <h1 className="text-xl text-primary-400">#{price}</h1>
+          <h1 className="md:text-3xl font-bold">{title}</h1>
+          <h1 className="text-sm font-bold md:text-xl text-primary-400">#{price}</h1>
         </div>
       </div>
       <div className="right">
       <button
-                        className="bg-primary-400 text-white py-1 px-4 rounded-md w-full"
+                        className="text-sm md:text-lg bg-primary-400 text-white py-1 px-4 rounded-md w-full"
                         onClick={() => handleAdd(data)}
                       >
                         Add to cart
