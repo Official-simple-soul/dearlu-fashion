@@ -21,7 +21,7 @@ function ProductView({ switchName }) {
   if (isLoading) {
     return (
       <>
-        <div className="w-[250%] h-[300px] flex justify-center items-center">
+        <div className="w-full md:w-[250%] h-[300px] flex justify-center items-center">
           <div className="spinner"></div>
         </div>
       </>

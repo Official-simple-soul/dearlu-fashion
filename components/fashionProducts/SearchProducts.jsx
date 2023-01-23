@@ -27,6 +27,7 @@ const {setIsLoading} = useGlobalContext(false)
     setSearch(newData.length > 0 ? newData : 'Search not found');
   setIsLoading(true)
   };
+  
   useEffect(() => {
     setTimeout(()=>{
       setIsLoading(false)
