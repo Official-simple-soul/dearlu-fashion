@@ -8,7 +8,7 @@ function Jewelries() {
     <div className="py-16 bg-white">
       <div className="top h-40 md:h-80 relative">
         <Image
-          src={'/images/header/jeweryheader.png'}
+          src={'/Images/header/jeweryheader.png'}
           fill
           alt="jewelry header"
         />
@@ -25,7 +25,14 @@ function Jewelries() {
               <ul>
                 <li className=" pb-4 shadow-lg" key={data.id}>
                   <div className="md:h-64 h-40 relative">
-                  <Link href={`/view/${data.id}`}><Image src={data.img} fill alt={data.title} className="" /></Link>
+                    <Link href={`/view/${data.id}`}>
+                      <Image
+                        src={data.img}
+                        fill
+                        alt={data.title}
+                        className=""
+                      />
+                    </Link>
                   </div>
                 </li>
               </ul>

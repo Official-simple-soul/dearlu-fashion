@@ -9,13 +9,15 @@ function KidsCollection() {
     <div className="pb-16 bg-white">
       <div className="top h-40 md:h-80 relative">
         <Image
-          src={'/images/header/kiddiescollectionheader.png'}
+          src={'/Images/header/kiddiescollectionheader.png'}
           fill
           alt="jewelry header"
         />
         <div className="top-0 bottom-0 right-0 left-0 bg-primary-400 absolute opacity-40"></div>
         <div className="absolute top-[40%] left-[30%]">
-          <h1 className="text-2xl md:text-5xl font-bold">Kiddies Collections 2022</h1>
+          <h1 className="text-2xl md:text-5xl font-bold">
+            Kiddies Collections 2022
+          </h1>
         </div>
       </div>
       <div className="grid grid-cols-2 gap-4 md:grid-cols-6 md:gap-8 px-5 py-12">
@@ -35,7 +37,7 @@ function KidsCollection() {
       </div>
       <div className="top h-40 md:h-[450px] relative">
         <Image
-          src={'/images/header/backtoschool.png'}
+          src={'/Images/header/backtoschool.png'}
           fill
           alt="jewelry header"
         />
