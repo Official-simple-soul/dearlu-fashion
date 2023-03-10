@@ -21,7 +21,7 @@ function Main() {
       <div className="pb-20 pt-[110px] bg-white">
         <div className="relative h-80 md:h-[630px]">
           <Image src="/Images/header/topheader.png" alt="top header" fill className=''/>
-          <div className="z-50 text absolute bottom-10 left-2 md:bottom-40 md:left-10">
+          <div className="z-20 text absolute bottom-10 left-2 md:bottom-40 md:left-10">
             <h1 className="text-4xl md:text-6xl font-bold">New</h1>
             <h1 className="text-4xl md:text-6xl font-bold md:my-5">Collections</h1>
             <h1 className="text-4xl md:text-6xl font-bold">2022</h1>
