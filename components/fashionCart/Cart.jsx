@@ -14,6 +14,7 @@ function Cart() {
     setCart([]);
   };
 
+  
   return (
     <div className="py-[58px] bg-secondary-50">
       <div className="flex justify-between items-center">
@@ -31,7 +32,7 @@ function Cart() {
       {cart.length > 0 ? (
         cart.map((carts) => {
           const { title, img, price, id } = carts;
-    
+
           return (
             <>
               <CartRow
@@ -74,7 +75,10 @@ function Cart() {
           </p>
           <div className="flex justify-center">
             <Link href={'/checkout'}>
-              <button disabled={cart<1} className="text-white bg-primary-400 w-80 md:px-36 py-3 rounded-md">
+              <button
+                disabled={cart < 1}
+                className="text-white bg-primary-400 w-80 md:px-36 py-3 rounded-md"
+              >
                 checkout
               </button>
             </Link>

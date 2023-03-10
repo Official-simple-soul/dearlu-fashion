@@ -171,7 +171,7 @@ function Payment({ setOtp, setToPayment }) {
             </div>
           </div>
         </div>
-        <div className="bg-secondary-50 shadow-xl p-8 h-80">
+        <div className="bg-secondary-50 shadow-xl p-8 h-full">
           <h1 className="text-primary-400 text-2xl text-center">
             Order Summary
           </h1>
@@ -180,9 +180,10 @@ function Payment({ setOtp, setToPayment }) {
               <>
                 <div className="flex items-center justify-between my-5 space-x-12">
                   <h1 className="text-lg md:text-xl text-black">
-                    {item.title}<span className="block"></span>
+                    {item.title}<span className="block">x{item.quantity}</span>
+                    
                   </h1>
-                  <h1 className="text-primary-400 text-lg md:text-2xl"># {item.price}</h1>
+                  <h1 className="text-primary-400 text-lg md:text-2xl"># {item.price * item.quantity}</h1>
                 </div>
               </>
             );

@@ -1,9 +1,9 @@
 import React from 'react'
-
+import UserPage from '../components/UserPage/UserPage'
 function User() {
   return (
-    <div>
-      user
+    <div className='pt-[57px]'>
+      <UserPage />
     </div>
   )
 }

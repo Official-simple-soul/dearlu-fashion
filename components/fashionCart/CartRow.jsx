@@ -6,7 +6,9 @@ import { useGlobalContext } from '../../context/context';
 function CartRow({ title, img, price, id, carts, setTotal }) {
   const { cart, setCart } = useGlobalContext([]);
   const [multiply, setMultiply] = useState(1);
-
+  const [sizeValue, setSizeValue] = useState(1);
+  const [quantityId, setQuantityId] = useState(0);
+  const [sizeId, setSizeId] = useState(0);
 
   const handleRemove = (carts) => {
     setCart(cart.filter((item) => item.id !== carts.id));
@@ -21,6 +23,32 @@ function CartRow({ title, img, price, id, carts, setTotal }) {
     const totals = sum.reduce((a, b) => Number(a) + Number(b), 0);
     setTotal(totals);
   });
+
+  const handleQuantityChange = (e) => {
+    const { value, id } = e.target;
+    setMultiply(value);
+    setQuantityId(+id);
+  };
+  
+  const handleSizeChange = (e) => {
+    const { value, id } = e.target;
+    setSizeValue(value);
+    setSizeId(+id);
+  }
+
+  useEffect(() => {
+    const adjustOrder = cart.map((e) => {
+      return e.id === quantityId ? { ...e, quantity: +multiply } : e;
+    });
+    setCart(adjustOrder);
+  }, [quantityId, multiply]);
+  
+  useEffect(() => {
+    const adjustOrder = cart.map((e) => {
+      return e.id === sizeId ? { ...e, size: sizeValue } : e;
+    });
+    setCart(adjustOrder);
+  }, [sizeId, sizeValue]);
 
 
 
@@ -45,9 +73,8 @@ function CartRow({ title, img, price, id, carts, setTotal }) {
               <input
                 type="number"
                 defaultValue={1}
-                onChange={(e) => {
-                  setMultiply(e.target.value)
-                }}
+                id={id}
+                onChange={handleQuantityChange}
                 className="py-1 text-sm pl-2 w-12 md:w-20 bg-white border border-black"
               />
             </div>
@@ -55,7 +82,9 @@ function CartRow({ title, img, price, id, carts, setTotal }) {
               <h1 className="mb-3 text-sm md:text-lg">Size</h1>
               <select
                 name=""
-                id=""
+                id={id}
+                defaultValue={39}
+                onChange={handleSizeChange}
                 className="py-1 px-1 text-sm bg-white w-12 md:w-20 border border-black tt"
               >
                 <option value={39}>39 (UK)</option>
@@ -70,7 +99,9 @@ function CartRow({ title, img, price, id, carts, setTotal }) {
         </div>
       </div>
       <div className="flex mt-4 ml-8">
-        <span className="md:text-3xl text-lg border border-r-0 md:border-none pl-2 md:pl-0 text-primary-400 font-bold">#</span>
+        <span className="md:text-3xl text-lg border border-r-0 md:border-none pl-2 md:pl-0 text-primary-400 font-bold">
+          #
+        </span>
         <h1 className="md:text-3xl text-lg border border-l-0 md:border-none pr-2 md:pr-0 text-primary-400 font-bold tr">
           {price * multiply}
         </h1>

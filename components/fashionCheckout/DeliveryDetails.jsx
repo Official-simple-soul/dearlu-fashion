@@ -232,7 +232,7 @@ function DeliveryDetails({ setToPayment }) {
             </div>
           </div>
         </form>
-        <div className="bg-secondary-50 shadow-xl p-8">
+        <div className="bg-secondary-50 shadow-xl p-8 h-full">
           <h1 className="text-primary-400 text-2xl text-center">
             Order Summary
           </h1>
@@ -242,7 +242,7 @@ function DeliveryDetails({ setToPayment }) {
                 <>
                   <div className="flex items-center justify-between my-5 space-x-12">
                     <h1 className="text-black">
-                      {item.title} <span className="block">x1</span>
+                      {item.title} <span className="block">x{item.quantity}</span>
                     </h1>
                     <h1 className="text-primary-400 text-lg md:text-xl">{item.price}</h1>
                   </div>
@@ -252,7 +252,7 @@ function DeliveryDetails({ setToPayment }) {
           ) : (
             <div className="flex items-center justify-between my-5 space-x-12">
               <h1 className=" text-black">
-                {cartSingle.title} <span className="block">x1</span>
+                {cartSingle.title} <span className="block">{cartSingle.quantity}</span>
               </h1>
               <h1 className="text-primary-400 text-xl">{cartSingle.price}</h1>
             </div>

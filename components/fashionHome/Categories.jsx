@@ -6,14 +6,14 @@ function Categories() {
   return (
     <div className="p-5 bg-secondary-50 text-primary-500">
       <h1>Categories</h1>
-      <div className="grid grid-cols-2 md:grid-cols-6 md:gap-4 py-4 md:space-y-3 md:space-y-0">
+      <div className="grid grid-cols-2 md:grid-cols-6 md:gap-4 py-4 space-y-3 md:space-y-0">
         {Data()
           .slice(0, 6)
           .map((data) => {
             return (
               <>
                 <div
-                  className="flex items-center space-x-4 bg-white shadow-md px-2 m-2 py-1"
+                  className="flex items-center space-x-4 md:space-x-0 bg-white shadow-md px-2 m-2 py-1"
                   key={data.id}
                 >
                   <Image
