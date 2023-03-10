@@ -19,18 +19,20 @@ function Main() {
     <>
       <MainNav />
       <div className="pb-20 pt-[110px] bg-white">
-        <div className="relative h-[630px]">
-          <Image src="/Images/header/topheader.png" alt="top header" fill />
-          <div className="text absolute bottom-40 left-10">
-            <h1 className="text-6xl font-bold">New</h1>
-            <h1 className="text-6xl font-bold my-5">Collections</h1>
-            <h1 className="text-6xl font-bold">2022</h1>
+        <div className="relative h-80 md:h-[630px]">
+          <Image src="/Images/header/topheader.png" alt="top header" fill className=''/>
+          <div className="z-50 text absolute bottom-10 left-2 md:bottom-40 md:left-10">
+            <h1 className="text-4xl md:text-6xl font-bold">New</h1>
+            <h1 className="text-4xl md:text-6xl font-bold md:my-5">Collections</h1>
+            <h1 className="text-4xl md:text-6xl font-bold">2022</h1>
             <Link href={'/products'}>
               <button className="px-12 bg-primary-400 text-white mt-8 py-1 rounded-md text-lg">
                 Start shopping
               </button>
             </Link>
+            
           </div>
+          <div className="bg-black absolute top-0 right-0 left-0 bottom-0 opacity-40 md:bg-transparent"></div>
         </div>
         <Categories />
         <DealsofTheDay setShowModal={setShowModal} />
