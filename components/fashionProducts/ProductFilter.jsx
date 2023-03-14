@@ -30,11 +30,8 @@ const BRANDS = [
 ];
 const hh = BRANDS.filter((item) => item === 'shoe');
 
-function ProductFilter() {
-  const [val, setVal] = useState({
-    min: '10000',
-    max: '10000',
-  });
+function ProductFilter({setVal, val}) {
+
 
   const handle = ({ target }) => {
     setVal({ ...val, [target.name]: target.value });
@@ -81,18 +78,15 @@ function ProductFilter() {
             type="number"
             name="name"
             className="border py-1 px-2 w-[100px] bg-transparent border-black"
-            value={10000 - +min}
+            defaultValue={10000 - +min}
           />
           <input
             type="number"
             name="name"
             className="border py-1 px-2 w-[100px] bg-transparent border-black"
-            value={+max + 10000}
+            defaultValue={+max + 10000}
           />
         </div>
-      </div>
-      <div className="color">
-        <h1 className="text-secondary-200">COLORS</h1>
       </div>
       <div className="brands mt-12">
         <h1 className="text-secondary-200 mb-4">SHOP BY BRANDS</h1>
@@ -107,18 +101,17 @@ function ProductFilter() {
         <div className="col space-y-4 mt-8">
           {BRANDS[0].shoe.map((brands, idx) => {
             return (
-              <>
                 <div className="flex items-center justify-between" key={idx}>
                   <div className="flex items-center space-x-5">
                     <input
                       type="checkbox"
+                      defaultChecked
                       className="w-6 h-6 border-2 bg-white border-black checked:bg-primary-400 appearance-none indeterminate:bg-primary-300"
                     />
                     <h1 className="text-black">{brands.name}</h1>
                   </div>
                   <h1 className="text-black">{brands.quantity}</h1>
                 </div>
-              </>
             );
           })}
         </div>
@@ -136,18 +129,17 @@ function ProductFilter() {
         <div className="col space-y-4 mt-8">
           {BRANDS[1].category.map((brands, idx) => {
             return (
-              <>
                 <div className="flex items-center justify-between" key={idx}>
                   <div className="flex items-center space-x-5">
                     <input
                       type="checkbox"
+                      defaultChecked
                       className="w-6 h-6 border-2 bg-white border-black checked:bg-primary-400 appearance-none indeterminate:bg-primary-300"
                     />
                     <h1 className="text-black">{brands.name}</h1>
                   </div>
                   <h1 className="text-black">{brands.quantity}</h1>
                 </div>
-              </>
             );
           })}
         </div>

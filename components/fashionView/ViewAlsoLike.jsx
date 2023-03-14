@@ -28,10 +28,10 @@ function ViewAlsoLike({ data }) {
             slidesPerView: 2,
           },
           750: {
-            slidesPerView: 3,
+            slidesPerView: 4,
           },
           1150: {
-            slidesPerView: 3,
+            slidesPerView: 4,
           },
         }}
         spaceBetween={30}
@@ -49,7 +49,7 @@ function ViewAlsoLike({ data }) {
                     key={data.id}
                   >
                     <div className="px-3">
-                      <div className="h-40 md:h-80 w-32 md:w-80 relative">
+                      <div className="h-40 md:h- w-32 md:w-48 relative">
                         <Image src={data.img} alt="" fill className="" />
                       </div>
                       <h1 className="mt-3">{data.title}</h1>

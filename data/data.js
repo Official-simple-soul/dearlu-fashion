@@ -127,7 +127,7 @@ function Data() {
       title: 'Gold Chain',
       category: 'Jewelries',
       img: '/Images/categories/chain.png',
-      price: 17000,
+      price: 1800,
       quantity: 1,
     },
     {
@@ -135,7 +135,7 @@ function Data() {
       title: 'Nike',
       category: 'Shoe',
       img: '/Images/categories/nikeshoe1.png',
-      price: 17000,
+      price: 2400,
       quantity: 1,
     },
     {
@@ -143,7 +143,7 @@ function Data() {
       title: 'Puma',
       category: 'Shoe',
       img: '/Images/categories/pumashoe.png',
-      price: 17000,
+      price: 22000,
       quantity: 1,
     },
     {
@@ -151,7 +151,7 @@ function Data() {
       title: 'Balenciaga',
       category: 'Shoe',
       img: '/Images/categories/balenciagashoe.png',
-      price: 17000,
+      price: 16500,
       quantity: 1,
     },
     {
@@ -159,7 +159,7 @@ function Data() {
       title: 'Addidas',
       category: 'Shoe',
       img: '/Images/categories/addidasshoe.png',
-      price: 17000,
+      price: 12999,
       quantity: 1,
     },
     {
@@ -167,7 +167,7 @@ function Data() {
       title: 'Gucci',
       category: 'Shoe',
       img: '/Images/categories/guccishoe.png',
-      price: 17000,
+      price: 11400,
       quantity: 1,
     },
     {
@@ -175,7 +175,7 @@ function Data() {
       title: 'McQueens',
       category: 'Shoe',
       img: '/Images/categories/mcqueens.png',
-      price: 17000,
+      price: 1800,
       quantity: 1,
     },
     {
@@ -183,7 +183,7 @@ function Data() {
       title: 'Nike Dunk High',
       category: 'Shoe',
       img: '/Images/categories/nikeshoe1.png',
-      price: 17000,
+      price: 2500,
       quantity: 1,
     },
     {
@@ -191,7 +191,7 @@ function Data() {
       title: 'Nike Dunk High',
       category: 'Shoe',
       img: '/Images/categories/nikeshoe2.png',
-      price: 17000,
+      price: 9000,
       quantity: 1,
     },
     {
@@ -199,7 +199,7 @@ function Data() {
       title: 'Nike Revolution',
       category: 'Shoe',
       img: '/Images/categories/nikeshoe3.png',
-      price: 17000,
+      price: 33000,
       quantity: 1,
     },
     {
@@ -207,7 +207,7 @@ function Data() {
       title: 'Nike Dunk High',
       category: 'Shoe',
       img: '/Images/categories/nikeshoe4.png',
-      price: 17000,
+      price: 12000,
       quantity: 1,
     },
     {
@@ -215,7 +215,7 @@ function Data() {
       title: 'Nike Dunk High',
       category: 'Shoe',
       img: '/Images/categories/nikeshoe5.png',
-      price: 17000,
+      price: 5000,
       quantity: 1,
     },
     {
@@ -223,7 +223,7 @@ function Data() {
       title: 'Nike Dunk High',
       category: 'Shoe',
       img: '/Images/categories/nikeshoe6.png',
-      price: 17000,
+      price: 24100,
       quantity: 1,
     },
     {
@@ -231,7 +231,7 @@ function Data() {
       title: 'Nike Dunk High',
       category: 'Shoe',
       img: '/Images/categories/nikeshoe7.png',
-      price: 17000,
+      price: 7000,
       quantity: 1,
     },
     {
@@ -239,7 +239,7 @@ function Data() {
       title: 'Nike Dunk High',
       category: 'Shoe',
       img: '/Images/categories/nikeshoe8.png',
-      price: 17000,
+      price: 122000,
       quantity: 1,
     },
     {

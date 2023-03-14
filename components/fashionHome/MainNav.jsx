@@ -18,14 +18,12 @@ export default function MainNav() {
         {
             Nav.map((nav, idx)=> {
                 return (
-                    <>
-                    <Link href={`${nav.link}`}>
-                        <li key={idx} className={`flex space-x-3 items-center ${active===nav.route?'text-primary-400': 'text-secondary-100'}`} onClick={(e)=> setActive(e.currentTarget.innerHTML)}>
+                    <Link href={`${nav.link}`} key={idx}>
+                        <li className={`flex space-x-3 items-center ${active===nav.route?'text-primary-400': 'text-secondary-100'}`} onClick={(e)=> setActive(e.currentTarget.innerHTML)}>
                         {nav.img}
                         <h1>{nav.route}</h1>
                     </li>
                     </Link>
-                    </>
                 )
             })
         }

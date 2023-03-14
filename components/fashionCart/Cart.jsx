@@ -14,7 +14,6 @@ function Cart() {
     setCart([]);
   };
 
-  
   return (
     <div className="py-[58px] bg-secondary-50">
       <div className="flex justify-between items-center">

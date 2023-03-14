@@ -24,7 +24,7 @@ function Main() {
           <div className="z-20 text absolute bottom-10 left-2 md:bottom-40 md:left-10">
             <h1 className="text-4xl md:text-6xl font-bold">New</h1>
             <h1 className="text-4xl md:text-6xl font-bold md:my-5">Collections</h1>
-            <h1 className="text-4xl md:text-6xl font-bold">2022</h1>
+            <h1 className="text-4xl md:text-6xl font-bold">2023</h1>
             <Link href={'/products'}>
               <button className="px-12 bg-primary-400 text-white mt-8 py-1 rounded-md text-lg">
                 Start shopping

@@ -18,7 +18,6 @@ function SwitchProducts({setSwitchName}) {
       <ul className="flex flex-wrap justify-center items-center rounded-md">
         {Switch.map((switches, idx) => {
           return (
-            <>
               <li key={idx}
                 className={`my-1 mx-1 px-4 md:px-10 py-1 md:py-4 cursor-pointer ${
                   active === switches.route
@@ -35,7 +34,6 @@ function SwitchProducts({setSwitchName}) {
               >
                 {switches.route}
               </li>
-            </>
           );
         })}
       </ul>

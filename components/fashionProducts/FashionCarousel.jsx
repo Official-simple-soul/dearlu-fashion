@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Data } from '../../data/data';
 import Image from 'next/image';
@@ -9,11 +10,11 @@ import 'swiper/css/free-mode';
 import 'swiper/css/navigation';
 import Link from 'next/link';
 
-function FashionCarousel({switchName}) {
-const {search} = useGlobalContext()
-const filtered = Data().filter((item) => item.category === switchName);
+function FashionCarousel({ switchName }) {
+  const { search } = useGlobalContext();
+  const filtered = Data().filter((item) => item.category === switchName);
 
-return (
+  return (
     <div className="bg-secondary-50 py-5 px-5 text-black transition-all ease-in-out duration-500">
       <Swiper
         breakpoints={{
@@ -32,29 +33,26 @@ return (
         modules={[FreeMode, Navigation]}
         className="mySwiper"
       >
-        {
-        search && search.length>0?
-        <></>
-        :
-        filtered.map((data) => {
-          return (
-            <div className="f" key={data.id}>
-             <SwiperSlide>
-             <Link href={`/view/${data.id}`}><div
-                  className="flex cursor-pointer justify-center items-center py-2 md:py-4 md:px-4 shadow-lg transition-all ease-in-out duration-500"
-                  key={data.id}
-                >
-                  <div className="w-32 h-[125px] md:h-40">
-                    <div className="h-20 md:h-28 md:w-28 relative">
-                      <Image src={data.img} alt="" fill className="" />
+        {search && search.length > 0 ? (
+          <></>
+        ) : (
+          filtered.map((data) => {
+            return (
+              <SwiperSlide key={data.id}>
+                <Link href={`/view/${data.id}`}>
+                  <div className="flex cursor-pointer justify-center items-center py-2 md:py-4 md:px-4 shadow-lg transition-all ease-in-out duration-500">
+                    <div className="w-32 h-[125px] md:h-40">
+                      <div className="h-20 md:h-28 md:w-28 relative">
+                        <Image src={data.img} alt="" fill className="" />
+                      </div>
+                      <h1 className="mt-3">{data.title}</h1>
                     </div>
-                    <h1 className="mt-3">{data.title}</h1>
                   </div>
-                </div></Link> 
+                </Link>
               </SwiperSlide>
-            </div>
-          );
-        })}
+            );
+          })
+        )}
       </Swiper>
     </div>
   );

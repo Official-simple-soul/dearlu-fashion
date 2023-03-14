@@ -6,12 +6,16 @@ import Link from 'next/link';
 function ViewTop({ img, title, price, id, data }) {
   const { cart, setCart } = useGlobalContext([]);
   const { setCartSingle } = useGlobalContext({});
-  const [size, setSize] = useState(0)
-
+  const [size, setSize] = useState(0);
+  const [added, setAdded] = useState(false);
   const handleAdd = (data) => {
-    setCart([...cart, data]);
+    if (cart.some((e) => e.id === data.id)) {
+      setCart(cart.filter((e) => e.id !== data.id));
+    } else {
+      setCart((f) => [...f, data]);
+    }
   };
- 
+
   return (
     <div className="grid md:grid-cols-2 gap-4 py-8" key={id}>
       <div className="relative h-64 md:h-[477px] w-full bg-white">
@@ -37,7 +41,16 @@ function ViewTop({ img, title, price, id, data }) {
               {[40, 41, 42, 43, 44, 45].map((item) => {
                 return (
                   <>
-                    <div className={`${Number(size)===item?'bg-primary-400 text-white':'bg-white'} px-3 py-3 text-center rounded-3xl cursor-pointer`} onClick={(e)=>setSize(e.currentTarget.innerHTML)}>{item}</div>
+                    <div
+                      className={`${
+                        Number(size) === item
+                          ? 'bg-primary-400 text-white'
+                          : 'bg-white'
+                      } px-3 py-3 text-center rounded-3xl cursor-pointer`}
+                      onClick={(e) => setSize(e.currentTarget.innerHTML)}
+                    >
+                      {item}
+                    </div>
                   </>
                 );
               })}
@@ -45,14 +58,24 @@ function ViewTop({ img, title, price, id, data }) {
           </div>
           <div className="flex items-center justify-between">
             <button
-              className="text-sm md:text-lg bg-primary-400 text-white px-8 py-1 rounded-md"
-              onClick={() => handleAdd(data)}
+              className={`${
+                added ? 'bg-red-500' : 'bg-primary-400'
+              }  text-white py-1 rounded-md px-8`}
+              onClick={() => {
+                handleAdd(data);
+                setAdded(!added);
+              }}
             >
-              Add to cart
+              {added ? 'Remove' : 'Add to cart'}
             </button>
-            <Link href={'/checkout'}><button onClick={()=>setCartSingle(data)} className="w-40 text-sm md:text-lg bg-primary-400 text-white rounded-md py-1">
-              Buy now
-            </button></Link>
+            <Link href={'/checkout'}>
+              <button
+                onClick={() => setCartSingle(data)}
+                className="w-40 text-sm md:text-lg bg-primary-400 text-white rounded-md py-1"
+              >
+                Buy now
+              </button>
+            </Link>
           </div>
         </div>
       </div>

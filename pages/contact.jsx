@@ -13,6 +13,12 @@ function Contact() {
   const [success, setSuccess] = useState(false);
   const [failed, setFailed] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [val, setVal] = useState({
+    user_name: '',
+    subject: '',
+    message: ''
+  })
+  
   const form = useRef();
 
   const handleSubmit = async (e) => {
@@ -31,6 +37,12 @@ function Contact() {
           console.log(result.text);
           setSuccess(true);
           setLoading(false);
+          setVal({
+            user_name: '',
+            subject: '',
+            message: ''
+          })
+          
         },
         (error) => {
           console.log(error.text);
@@ -43,6 +55,10 @@ function Contact() {
     setSuccess(false);
     setFailed(false);
   }, 5000);
+
+  const handleInputChange =({target})=> {
+    setVal({...val, [target.name]: target.vale})
+  }
 
   return (
     <div className="relative pt-[60px] bg-secondary-50 text-black">
@@ -76,6 +92,8 @@ function Contact() {
               <input
                 type="text" 
                 name="user_name"
+                value={val.user_name}
+                onChange={handleInputChange}
                 className="bg-white text-black border-secondary-100 mt-2 block w-80 md:w-96 h-10 p-3"
                 required
               />
@@ -85,6 +103,8 @@ function Contact() {
               <input
                 type="text"
                 name="subject"
+                value={val.subject}
+                onChange={handleInputChange}
                 className="bg-white text-black border-secondary-100 mt-2 block w-80 md:w-96 h-10 p-3"
                 required
               />
@@ -96,6 +116,8 @@ function Contact() {
                 id=""
                 cols="30"
                 rows="6"
+                value={val.message}
+                onChange={handleInputChange}
                 className="text-black bg-white border-secondary-100 mt-2 block w-80 md:w-96 p-3"
                 required
               ></textarea>

@@ -11,7 +11,6 @@ function Categories() {
           .slice(0, 6)
           .map((data) => {
             return (
-              <>
                 <div
                   className="flex items-center space-x-4 md:space-x-0 bg-white shadow-md px-2 m-2 py-1"
                   key={data.id}
@@ -24,7 +23,6 @@ function Categories() {
                   />
                   <h1 className="">{data.category}</h1>
                 </div>
-              </>
             );
           })}
       </div>

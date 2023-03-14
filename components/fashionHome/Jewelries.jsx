@@ -18,11 +18,9 @@ function Jewelries() {
           </h1>
         </div>
       </div>
-      <div className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-8 px-5 py-12">
+      <ul className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-8 px-5 py-12">
         {Jewelry().map((data) => {
           return (
-            <>
-              <ul>
                 <li className=" pb-4 shadow-lg" key={data.id}>
                   <div className="md:h-64 h-40 relative">
                     <Link href={`/view/${data.id}`}>
@@ -35,11 +33,9 @@ function Jewelries() {
                     </Link>
                   </div>
                 </li>
-              </ul>
-            </>
           );
         })}
-      </div>
+      </ul>
     </div>
   );
 }

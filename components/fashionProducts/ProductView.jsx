@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Data } from '../../data/data';
 import Image from 'next/image';
 import { AiFillStar, AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
@@ -7,17 +7,30 @@ import Modal from '../Modal';
 import Link from 'next/link';
 import { useGlobalContext } from '../../context/context';
 
-function ProductView({ switchName }) {
+function ProductView({ switchName, val, grid }) {
   const [showModal, setShowModal] = React.useState(false);
   const { cart, setCart } = useGlobalContext([]);
   const { search } = useGlobalContext();
   const { isLoading } = useGlobalContext();
+  const {min, max} = val
+  const [filtered, setFiltered] = useState([])
 
-  const filtered = Data().filter((item) => item.category === switchName);
 
   const handleAdd = (data) => {
-    setCart([...cart, data]);
+    if(cart.some(e=>e.id===data.id)){
+      setCart(cart.filter(e=>e.id!==data.id))
+    }
+    else {
+      setCart(f=> [...f, data])
+    }
   };
+
+  useEffect(()=> {
+    setFiltered(Data().filter((item) => item.category === switchName && item.price > (10000 - (+min)) && item.price < (+max + 10000) ))
+  },[switchName, min, max])
+
+
+
   if (isLoading) {
     return (
       <>
@@ -29,7 +42,7 @@ function ProductView({ switchName }) {
   }
   return (
     <div className="col-span-2">
-      <div className="grid grid-cols-1 md:grid-cols-2 md:gap-12">
+      <div className={`${grid?'md:grid-cols-3':'md:grid-cols-1'} grid grid-cols-1  md:gap-8`}>
         {search === 'Search not found' ? (
           <div className="h-98 flex justify-center items-center w-full">
             <div className="block">
@@ -43,32 +56,32 @@ function ProductView({ switchName }) {
           search.map((data) => {
             const { price, img, title, id } = data;
             return (
-              <>
-                <FashionRow
-                  title={title}
-                  price={price}
-                  img={img}
-                  id={id}
-                  handleAdd={handleAdd}
-                  data={data}
-                />
-              </>
+              <FashionRow
+                title={title}
+                price={price}
+                img={img}
+                id={id}
+                handleAdd={handleAdd}
+                data={data}
+                key={id}
+                grid={grid}
+              />
             );
           })
         ) : (
           filtered.slice(-8).map((data) => {
             const { price, img, title, id } = data;
             return (
-              <>
-                <FashionRow
-                  title={title}
-                  price={price}
-                  img={img}
-                  id={id}
-                  handleAdd={handleAdd}
-                  data={data}
-                />
-              </>
+              <FashionRow
+                title={title}
+                price={price}
+                img={img}
+                id={id}
+                handleAdd={handleAdd}
+                data={data}
+                key={id}
+                grid={grid}
+              />
             );
           })
         )}
