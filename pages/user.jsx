@@ -1,11 +1,11 @@
 import React from 'react'
 import UserPage from '../components/UserPage/UserPage'
-function User() {
+function user() {
   return (
-    <div className='pt-[57px]'>
-      <UserPage />
+    <div className='pt-[57px] bg-[#FAFAFA]'>
+        <UserPage />
     </div>
   )
 }
 
-export default User
+export default user
