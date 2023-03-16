@@ -71,7 +71,7 @@ function SignUp() {
   };
 
  async function handleGoogleLogin () {
-  signIn('google', {callbackUrl: "http://localhost:3000"})
+  signIn('google', {callbackUrl: "https://dearlu-fashion.vercel.app"})
  }
 
 
