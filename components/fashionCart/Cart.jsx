@@ -4,11 +4,13 @@ import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
 import { useGlobalContext } from '../../context/context';
 import CartRow from './CartRow';
+import { useSession } from 'next-auth/react';
+
 
 function Cart() {
   const { cart, setCart } = useGlobalContext([]);
   const { total, setTotal } = useGlobalContext();
-
+const {data: session} = useSession()
 
   const handleClearCart = () => {
     setCart([]);
@@ -72,11 +74,17 @@ function Cart() {
           <p className="text-sm text-secondary-100 my-4">
             Shipping fee will be calculated at checkout
           </p>
+          {
+            !session?.user?.name &&
+            <p className='text-red-500'>Please login to checkout</p>
+          }
           <div className="flex justify-center">
-            <Link href={'/checkout'}>
+            <Link href={`${session?.user?.name && '/checkout'}`}>
               <button
-                disabled={cart < 1}
+                disabled={cart < 1 || !session?.user?.name}
                 className="text-white bg-primary-400 w-80 md:px-36 py-3 rounded-md"
+             
+                
               >
                 checkout
               </button>

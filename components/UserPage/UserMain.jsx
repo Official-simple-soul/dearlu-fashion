@@ -7,7 +7,7 @@ function UserMain({activeNav}) {
 
   
   return (
-    <div className="text-black pl-12">
+    <div className="text-black px-5 md:pl-12 col-span-3 md:col-span-2">
         {
             activeNav === 'Orders'?
             <Orders />

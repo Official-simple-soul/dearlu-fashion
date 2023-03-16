@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Orders() {
+const Orders =()=> {
   return (
     <div className='text-primary-500'>
       Order coming soon

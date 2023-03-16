@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
 import { signIn } from 'next-auth/react';
 import { useGlobalContext } from '../../context/context';
+import {FcGoogle} from 'react-icons/fc'
+
+
 
 function generatePassword(passwordLength) {
   let numberChars = '0123456789';
@@ -157,13 +160,14 @@ function SignUp() {
           </div>
           <button
             type="submit"
-            className="w-full bg-primary-400 h-8 rounded-md text-white mt-8"
+            className="w-full bg-primary-400 h-8 rounded-md text-white mt-8 hover:bg-primary-300"
           >
             Create an account
           </button>
         </form>
-        <div className="text-white text-sm py-1 mt-4 mx-auto bg-red-500 rounded-md shadow-md text-center">
+        <div className="flex items-center justify-center  space-x-3 text-black text-sm py-1 mt-4 mx-auto border border-red-300 rounded-md shadow-md text-center hover:bg-gray-100 hover:border-none">
           <button onClick={handleGoogleLogin}>Sign in with Google</button>
+          <FcGoogle />
         </div>
       </div>
     </div>

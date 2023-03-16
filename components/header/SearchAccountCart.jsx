@@ -13,7 +13,8 @@ function SearchAccountCart({ setShowModal }) {
   const { cart } = useGlobalContext([]);
 const {data: session} = useSession()
 
-  
+
+
   return (
     <div className="flex items-center space-x-6 md:space-x-14 text-secondary-200">
       <FontAwesomeIcon
@@ -23,7 +24,7 @@ const {data: session} = useSession()
       />
       {session ? (
         <div>
-        <Link href={'/user'}><img src={session.user.image} alt={session.user.name} className='w-6 rounded-full'/></Link>
+        <Link href={'/user'}><img src={session?.user?.image} alt={session?.user?.name} className='w-6 rounded-full'/></Link>
       </div>
       ) : (
         <Link href={'/authentication'}>

@@ -26,15 +26,16 @@ function UserNav({ activeNav, setActiveNav }) {
   };
 
   return (
-    <nav>
-      <ul className="space-y-6 text-xl pl-12 text-gray-400 pt-10">
+    <nav className='group fixed -left-[50%] hover:-left-10 bottom-0 top-10 transition-all ease-in-out duration-500 pr-5 pt-20 md:pt-0 md:pr-0 bg-secondary-100 md:bg-transparent md:block md:static'>
+      <div className="md:hidden group-hover:hidden text-sm rotate-90 absolute -right-14 text-primary-400 bottom-[50%]">hover to see options</div>
+      <ul className="space-y-12 md:space-y-6 text-xl pl-12 text-gray-400 pt-10">
         {userNav.map((e, idx) => {
           const Icons = icons[idx];
           return (
             <li
               className={`${
                 activeNav === e.name && 'text-primary-400'
-              } flex items-center cursor-pointer`}
+              } flex items-center cursor-pointer text-sm md:text-md hover:text-primary-400`}
               key={idx}
               onClick={(e) => setActiveNav(e.currentTarget.innerText)}
             >

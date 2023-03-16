@@ -1,6 +1,8 @@
 import React from 'react'
 import SignUp from './SignUp'
-function Authentication() {
+
+
+const Authentication =()=> {
   return (
     <div className='bg-secondary-50'>
       <SignUp />

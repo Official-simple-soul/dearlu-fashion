@@ -10,7 +10,7 @@ function CheckOut() {
   
   const [toPayment, setToPayment] = useState(false);
   const [otp, setOtp] = useState(false);
-
+  const [checked, setChecked] = useState(false);
 
   return (
     <div className="py-[58px] bg-[#FAFAFA]">
@@ -47,7 +47,7 @@ function CheckOut() {
           3
         </div>
       </div>
-      {otp? <Otp />: toPayment ? <Payment setOtp={setOtp} setToPayment={setToPayment}/> : <DeliveryDetails setToPayment={setToPayment}/>}
+      {otp? <Otp />: toPayment ? <Payment checked={checked} setOtp={setOtp} setToPayment={setToPayment}/> : <DeliveryDetails checked={checked} setChecked={setChecked} setToPayment={setToPayment}/>}
       
     </div>
   );

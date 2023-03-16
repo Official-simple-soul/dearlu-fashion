@@ -8,8 +8,8 @@ function UserPage() {
 
   return (
     <div className="">
-      <AiOutlineArrowLeft className="cursor-pointer text-xl ml-12 text-primary-400 mt-6" />
-      <div className="grid grid-cols-3 py-6">
+      {/* <AiOutlineArrowLeft className="cursor-pointer text-xl ml-12 text-primary-400 mt-6" /> */}
+      <div className="grid grid-cols-4 py-6">
         <UserNav activeNav={activeNav} setActiveNav={setActiveNav} />
         <UserMain activeNav={activeNav}/>
       </div>

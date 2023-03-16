@@ -1,6 +1,6 @@
 
 
-export default function Custom404() {
+export const Custom404 =()=> {
   return (
     <div className="pt-[58px] h-screen flex flex-col justify-center items-center">
      

@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BsFillPenFill } from 'react-icons/bs';
 import { useGlobalContext } from '../../context/context';
-
-
+import { useSession } from 'next-auth/react';
 const Months = [
   'Jan',
   'Feb',
@@ -41,12 +40,14 @@ const Days = (month) => {
   return days;
 };
 
-function Payment({ setOtp, setToPayment }) {
+function Payment({ setOtp, setToPayment, checked }) {
   const [monthValue, setMonthValue] = useState('Month');
   const { all } = useGlobalContext();
   const { cart } = useGlobalContext([]);
   const { total } = useGlobalContext();
-
+  const { allCurrent } = useGlobalContext();
+  const [shippingFee, setShippingFee] = useState(2500);
+  const { data: session } = useSession();
   function getDays() {
     let dayLenght = [];
     for (let i = 1; i <= Days(monthValue); i++) {
@@ -59,6 +60,15 @@ function Payment({ setOtp, setToPayment }) {
     setOtp(true);
     setToPayment(false);
   }
+  useEffect(() => {
+    allCurrent.countryAdd !== 'Nigeria' || all.country !== 'Nigeria'
+      ? setShippingFee(6500)
+      : allCurrent.countryAdd === 'Nigeria' ||
+        (all.country === 'Nigeria' && allCurrent.stateAdd !== 'Lagos') ||
+        all.state !== 'Lagos'
+      ? setShippingFee(3500)
+      : setShippingFee(2500);
+  }, [allCurrent.stateAdd, all.state, allCurrent.countryAdd, all.country]);
 
   return (
     <div className="px-5">
@@ -69,23 +79,27 @@ function Payment({ setOtp, setToPayment }) {
               <h1 className="text-xl mb-3 text-primary-400">
                 Delivery Address
               </h1>
-              <div className="text-black">
-                <h1>
-                  To: {(all.firstName + ' ' + all.lastName).toUpperCase()}
-                </h1>
-                <h1 className="my-2">Mobile: {all.phone}</h1>
-                <h1>Email: {all.email}</h1>
-                <h1 className="mt-2">
-                  Location: {all.city}, {all.state}, {all.country}
-                </h1>
-              </div>
+              {checked ? (
+                <div className="text-black">
+                  <h1>To: {(session?.user?.name).toUpperCase()}</h1>
+                  <h1 className="my-2">Mobile: {allCurrent.phoneAdd}</h1>
+                  <h1>Email: {session?.user?.email}</h1>
+                  <h1 className="mt-2">
+                    Location: {allCurrent.cityAdd}, {allCurrent.stateAdd},{' '}
+                    {allCurrent.countryAdd}
+                  </h1>
+                </div>
+              ) : (
+                <div className="text-black">
+                  <h1>To: {(session?.user?.name).toUpperCase()}</h1>
+                  <h1 className="my-2">Mobile: {all.phone}</h1>
+                  <h1>Email: {session?.user?.email}</h1>
+                  <h1 className="mt-2">
+                    Location: {all.city}, {all.state}, {all.country}
+                  </h1>
+                </div>
+              )}
             </div>
-            <button className="border border-primary-400 rounded-md px-4 py-2 text-primary-400">
-              <span>
-                <BsFillPenFill className="inline mr-3" />
-              </span>
-              Edit
-            </button>
           </div>
           <div className="my-8 shadow-lg p-5 rounded-md bg-secondary-50 flex items-center justify-between">
             <div className="w-[150px]">
@@ -180,21 +194,25 @@ function Payment({ setOtp, setToPayment }) {
               <>
                 <div className="flex items-center justify-between my-5 space-x-12">
                   <h1 className="text-lg md:text-xl text-black">
-                    {item.title}<span className="block">x{item.quantity}</span>
-                    
+                    {item.title}
+                    <span className="block">x{item.quantity}</span>
                   </h1>
-                  <h1 className="text-primary-400 text-lg md:text-2xl"># {item.price * item.quantity}</h1>
+                  <h1 className="text-primary-400 text-lg md:text-2xl">
+                    # {item.price * item.quantity}
+                  </h1>
                 </div>
               </>
             );
           })}
           <div className="flex items-center justify-between my-5 space-x-12">
             <h1 className="text-lg md:text-xl text-black">Delivery fee</h1>
-            <h1 className="text-primary-400 text-lg md:text-2xl"># 2 500</h1>
+            <h1 className="text-primary-400 text-lg md:text-2xl">
+              {shippingFee * cart.length}
+            </h1>
           </div>
           <div className="flex items-center justify-between border-t border-b border-black py-2 font-bold text-xl md:text-3xl">
             <h1 className="text-black">Total</h1>
-            <h1 className="text-primary-400"># {total + 2500}</h1>
+            <h1 className="text-primary-400"># {total + (shippingFee * cart.length)}</h1>
           </div>
         </div>
       </div>
