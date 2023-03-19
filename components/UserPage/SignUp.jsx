@@ -107,7 +107,7 @@ async function onSubmit (values)  {
 
   return (
     <div className="flex justify-center items-center py-14 bg-login">
-      <div className="shadow bg-white py-3 px-3 md:px-8 text-black rounded-md">
+      <div className="shadow bg-white py-3 px-3 md:px-8 text-black rounded-md w-[98%] mx-auto">
         <form action="" onSubmit={formik.handleSubmit} className="">
           <div className="text mb-4">
             <h1 className="mb-2 text-primary-500 font-bold">Hello there</h1>
@@ -128,7 +128,7 @@ async function onSubmit (values)  {
               placeholder="Enter your full name"
               // onChange={handleChange}
               {...formik.getFieldProps('name')}
-              className={`text-sm w-80 h-8 bg-white border border-secondary-100 px-2 rounded block mb-5 placeholder:text-[8px]`}
+              className={`text-sm w-full h-8 bg-white border border-secondary-100 px-2 rounded block mb-5 placeholder:text-[8px]`}
             />
           </div>
           {
@@ -144,7 +144,7 @@ async function onSubmit (values)  {
               placeholder="Enter your email address"
               // onChange={handleChange}
               {...formik.getFieldProps('email')}
-              className="text-sm w-80 h-8 bg-white border border-secondary-100 px-2 rounded block mb-5 placeholder:text-[8px]"
+              className="text-sm w-full h-8 bg-white border border-secondary-100 px-2 rounded block mb-5 placeholder:text-[8px]"
             />
           </div>
           {
@@ -160,7 +160,7 @@ async function onSubmit (values)  {
               placeholder="Enter your phone number"
               // onChange={handleChange}
               {...formik.getFieldProps('phone')}
-              className="text-sm w-80 h-8 bg-white border border-secondary-100 px-2 rounded block mb-5 placeholder:text-[8px]"
+              className="text-sm w-full h-8 bg-white border border-secondary-100 px-2 rounded block mb-5 placeholder:text-[8px]"
             />
           </div>
           {
@@ -170,7 +170,7 @@ async function onSubmit (values)  {
             <label htmlFor="password" className="mb-2">
               Password
             </label>
-            <div className="flex justify-between items-center w-80 h-8 bg-white border border-secondary-100 px-2 rounded">
+            <div className="flex justify-between items-center w-full h-8 bg-white border border-secondary-100 px-2 rounded">
               <input
                 type={showPass ? 'text' : 'password'}
                 name="password"

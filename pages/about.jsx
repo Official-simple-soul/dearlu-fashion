@@ -52,7 +52,7 @@ const about = () => {
           />
         </div>
       
-      <div className="hover:bg-gray-50 cursor-pointer hover:text-black border-4 md:border-8 px-5 py-2 md:py-6 rounded-full absolute bottom-[54%] md:bottom-[14%] font-bold right-6 md:right-[13%] text-white">
+      <div className="hover:bg-gray-50 cursor-pointer hover:text-black border-4 px-5 py-2 md:py-6 rounded-full absolute bottom-[58%] md:bottom-[14%] font-bold right-6 md:right-[13%] text-white">
         <h1 className="font-bold md:text-[46px] tracking-wider">
           DearLu
         </h1>

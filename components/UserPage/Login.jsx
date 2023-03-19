@@ -76,9 +76,9 @@ function Login({ setLogIn }) {
 //   console.log(loginInput.email === inputVal.email);
 //   console.log(inputVal.email);
   return (
-    <div className="flex justify-center items-center h-[90vh] w-full px-3 bg-login">
+    <div className="flex justify-center items-center h-[90vh] px-3 bg-login">
       <h1 className='text-xl md:text-3xl text-white move-text absolute top-20 '>Boss 😎 try login abeg 🫡</h1>
-      <div className="login text-black p-5 shadow bg-white rounded-md">
+      <div className="login text-black p-5 shadow bg-white rounded-md w-[98%] md:w-96 mx-auto">
         <form action="" className="" onSubmit={formik.handleSubmit}>
           <h1 className="text-primary-500 text-xl font-bold">WELCOME BACK</h1>
           <p className="mb-3 text-[12px] mb-5">Sign in to get started</p>
@@ -97,7 +97,7 @@ function Login({ setLogIn }) {
               //   value={email}
             //   onChange={handleLoginInput}
             {...formik.getFieldProps('email')}
-              className="block placeholder:text-[8px] focus:outline-none w-80 mt-2 py-2 px-2 bg-transparent border rounded-md"
+              className="block placeholder:text-[8px] focus:outline-none w-full mt-2 py-2 px-2 bg-transparent border rounded-md"
             />
           </div>
           {
@@ -107,7 +107,7 @@ function Login({ setLogIn }) {
             <label htmlFor="password" className="">
               Password
             </label>
-            <div className="flex justify-between items-center rounded-md mt-2 px-2 border py-2 w-80">
+            <div className="flex justify-between items-center rounded-md mt-2 px-2 border py-2 w-full">
               <input
                 type={view ? 'text' : 'password'}
                 name="password"
