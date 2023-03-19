@@ -1,13 +1,14 @@
-import React from 'react'
-import SignUp from './SignUp'
+import React, {useState} from 'react';
+import SignUp from './SignUp';
+import Login from './Login';
 
-
-const Authentication =()=> {
+const Authentication = () => {
+  const [login, setLogIn] = useState(true);
   return (
-    <div className='bg-secondary-50'>
-      <SignUp />
+    <div className="bg-secondary-50">
+      {login ? <Login setLogIn={setLogIn} /> : <SignUp setLogIn={setLogIn} />}
     </div>
-  )
-}
+  );
+};
 
-export default Authentication
+export default Authentication;

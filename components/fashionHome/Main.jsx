@@ -11,6 +11,7 @@ import MainNav from './MainNav';
 import Modal from '../Modal';
 import SearchModal from '../modals/SearchModal';
 import Link from 'next/link';
+import { useSession } from 'next-auth/react';
 
 function Main() {
   const [showModal, setShowModal] = useState();

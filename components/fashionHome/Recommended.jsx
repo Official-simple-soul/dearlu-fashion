@@ -17,7 +17,7 @@ function Recommended() {
   };
 
   return (
-    <div className="bg-white">
+    <div className="bg-white md:w-[80%] md:mx-auto">
       <div className="flex justify-between items-center bg-primary-50 text-primary-500 px-5 py-2">
         <h1 className="">Recommended for you</h1>
         <Link href={'/products'}>
@@ -29,9 +29,9 @@ function Recommended() {
           </h1>
         </Link>
       </div>
-      <ul className="grid md:grid-cols-5 md:gap-10 p-5">
+      <ul className="grid md:grid-cols-4 md:gap-10 p-5">
         {Data()
-          .slice(11, 16)
+          .slice(11, 15)
           .map((data) => {
             return <RecommendedRow data={data} key={data.id} handleAdd={handleAdd}/>;
           })}

@@ -18,7 +18,7 @@ function DealsofTheDay() {
   };
 
   return (
-    <div className="bg-white py-4">
+    <div className="bg-white py-4 md:w-[80%] md:mx-auto">
       <div className="flex justify-between items-center bg-primary-50 text-primary-500 px-5 py-2">
         <h1 className="">Deals of the day</h1>
         <Link href={'/products'}><h1 className="">
@@ -28,9 +28,9 @@ function DealsofTheDay() {
           </span>
         </h1></Link>
       </div>
-      <ul className="grid md:grid-cols-5 md:gap-10 p-5">
+      <ul className="grid md:grid-cols-4 md:gap-10 p-5">
         {Data()
-          .slice(6, 11)
+          .slice(6, 10)
           .map((data) => {
             
             return (

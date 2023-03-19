@@ -21,14 +21,14 @@ function Jewelries() {
       <ul className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-8 px-5 py-12">
         {Jewelry().map((data) => {
           return (
-                <li className=" pb-4 shadow-lg" key={data.id}>
+                <li className="shadow-lg" key={data.id}>
                   <div className="md:h-64 h-40 relative">
                     <Link href={`/view/${data.id}`}>
                       <Image
                         src={data.img}
                         fill
                         alt={data.title}
-                        className=""
+                        className="rounded-md"
                       />
                     </Link>
                   </div>

@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 function Brandsfavourite() {
   return (
-    <div className="bg-white">
+    <div className="bg-white md:w-[80%] md:mx-auto">
       <div className="flex justify-between items-center bg-primary-50 text-primary-500 px-5 py-2">
         <h1 className="">Brands Favourite</h1>
         <Link href={'/products'}>
@@ -19,9 +19,9 @@ function Brandsfavourite() {
           </h1>
         </Link>
       </div>
-      <ul className="grid grid-cols-2 md:grid-cols-5 md:gap-10 gap-3 p-5">
+      <ul className="grid grid-cols-2 md:grid-cols-4 md:gap-10 gap-3 p-5">
         {Data()
-          .slice(6, 11)
+          .slice(6, 10)
           .map((data) => {
             return (
               <li
@@ -29,7 +29,7 @@ function Brandsfavourite() {
                 key={data.id}
               >
                 <Link href={`/view/${data.id}`}>
-                  <Image src={data.img} fill alt={data.title} />
+                  <Image src={data.img} fill alt={data.title} className='rounded-md'/>
                 </Link>
               </li>
             );

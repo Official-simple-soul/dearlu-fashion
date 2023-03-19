@@ -3,11 +3,12 @@ import React, { useState } from 'react';
 import { Data } from '../../data/data';
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, FreeMode } from 'swiper';
+import { Navigation, FreeMode, Autoplay } from 'swiper';
 import { useGlobalContext } from '../../context/context';
 import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/navigation';
+import 'swiper/css/autoplay';
 import Link from 'next/link';
 
 function FashionCarousel({ switchName }) {
@@ -30,7 +31,7 @@ function FashionCarousel({ switchName }) {
         }}
         spaceBetween={30}
         navigation={true}
-        modules={[FreeMode, Navigation]}
+        modules={[FreeMode, Navigation, Autoplay]}
         className="mySwiper"
       >
         {search && search.length > 0 ? (

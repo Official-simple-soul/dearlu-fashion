@@ -7,8 +7,8 @@ import ProductView from './ProductView'
 function ProductMain({switchName, grid}) {
 
   const [val, setVal] = useState({
-    min: '10000',
-    max: '10000',
+    min: '100000',
+    max: '100000',
   });
 
   return (

@@ -8,7 +8,7 @@ function RecommendedRow({data, handleAdd}) {
     <li className="bg-secondary-50 pb-4 shadow-lg" key={id}>
                 <Link href={`/view/${id}`}>
                   <div className="h-48 w-48 md:w-full mx-auto relative mb-6">
-                    <Image src={img} fill alt={title} />
+                    <Image src={img} fill alt={title} className=''/>
                   </div>
                 </Link>
                 <div className="px-5">

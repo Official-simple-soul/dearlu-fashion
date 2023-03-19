@@ -58,7 +58,7 @@ function ProductFilter({setVal, val}) {
             type="range"
             min="1"
             name="min"
-            max="10000"
+            max="100000"
             onChange={handle}
             value={min}
             className="w-full mr-[-2px] rotate-180"
@@ -67,7 +67,7 @@ function ProductFilter({setVal, val}) {
             type="range"
             min="1"
             name="max"
-            max="10000"
+            max="100000"
             onChange={handle}
             value={max}
             className="w-full ml-[-2px]"
@@ -78,13 +78,13 @@ function ProductFilter({setVal, val}) {
             type="number"
             name="name"
             className="border py-1 px-2 w-[100px] bg-transparent border-black"
-            defaultValue={10000 - +min}
+            value={100000 - +min}
           />
           <input
             type="number"
             name="name"
             className="border py-1 px-2 w-[100px] bg-transparent border-black"
-            defaultValue={+max + 10000}
+            value={+max + 100000}
           />
         </div>
       </div>
