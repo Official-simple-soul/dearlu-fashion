@@ -131,7 +131,7 @@ function Challenge() {
   }, [numMain, flag]);
 
   return (
-    <div className="pt-[130px] pb-[1000px] md:pb-0 h-[98vh] bg-white relative">
+    <div className="pt-[130px] pb-[1000px] md:pb-[600px] h-[98vh] bg-white relative">
       <div className={`pt-[220px] md:pt-[120px] flex flex-col-reverse md:flex md:flex-row md:items-end text-black`}>
         <div className="md:block text-center md:text-left relative h-[450px] w-full md:w-[40%] px-5 md:px-10">
           {data.map((e) => {
