@@ -77,7 +77,7 @@ function Login({ setLogIn }) {
 //   console.log(inputVal.email);
   return (
     <div className="flex justify-center items-center h-[90vh] px-3 bg-login">
-      <h1 className='text-xl md:text-3xl text-white move-text absolute top-20 '>Boss 😎 try login abeg 🫡</h1>
+      {/* <h1 className='text-xl md:text-3xl text-white move-text absolute top-20 '>Boss 😎 try login abeg 🫡</h1> */}
       <div className="login text-black p-5 shadow bg-white rounded-md w-[98%] md:w-96 mx-auto">
         <form action="" className="" onSubmit={formik.handleSubmit}>
           <h1 className="text-primary-500 text-xl font-bold">WELCOME BACK</h1>

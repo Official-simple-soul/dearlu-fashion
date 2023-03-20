@@ -244,3 +244,7 @@ a {
     transform: scale(10%);
   }
 }
+
+.shad {
+  box-shadow: 1px 1px 35px 10px #4FAF57;
+}
