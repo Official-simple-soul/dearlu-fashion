@@ -73,7 +73,7 @@ async function onSubmit (values)  {
   .then(res=>res.json())
   .then((data)=> {
     if(data){
-      router.push('http://localhost:3000/authentication')
+      router.push('http://localhost:3000/callbackpage')
     }
   })
 };
@@ -107,7 +107,7 @@ async function onSubmit (values)  {
 
   return (
     <div className="flex justify-center items-center py-14 bg-login">
-      <div className="shadow bg-white py-3 px-3 md:px-8 text-black rounded-md w-[98%] mx-auto">
+      <div className="shadow bg-white py-3 px-3 md:px-8 text-black rounded-md w-[98%] md:w-96 mx-auto">
         <form action="" onSubmit={formik.handleSubmit} className="">
           <div className="text mb-4">
             <h1 className="mb-2 text-primary-500 font-bold">Hello there</h1>

@@ -12,17 +12,17 @@ function User() {
 
 export default User;
 
-export const getServerSideProps = async (context) => {
-  const session = await getSession(context);
+// export const getServerSideProps = async (context) => {
+//   const session = await getSession(context);
 
-  if (!session) {
-    return {
-      redirect: {
-        destination: '/authentication',
-      },
-    };
-  }
-  return {
-    props: { session },
-  };
-};
+//   if (!session) {
+//     return {
+//       redirect: {
+//         destination: '/authentication',
+//       },
+//     };
+//   }
+//   return {
+//     props: { session },
+//   };
+// };

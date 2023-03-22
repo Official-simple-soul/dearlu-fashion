@@ -14,7 +14,7 @@ import Image from 'next/image';
 function SearchAccountCart({ setShowModal }) {
   const { cart } = useGlobalContext([]);
 const {data: session} = useSession()
-
+console.log(Boolean(session))
 
 
   return (
@@ -26,7 +26,7 @@ const {data: session} = useSession()
       />
       {session ? (
         <div>
-        <Link href={'/user'}><Image src={session?.user?.image} alt={session?.user?.name} className='w-6 rounded-full'/></Link>
+        <Link href={'/user'}><Image src={''} alt={session?.user?.name} className='w-6 rounded-full'/></Link>
       </div>
       ) : (
         <Link href={'/authentication'}>

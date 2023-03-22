@@ -12,7 +12,7 @@ export default NextAuth({
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     }),
     Credentials({
-      name: 'Email',
+      name: 'Credentials',
       async authorize(credentials, req) {
         connectMongo().catch(error=> {error: 'Connection Failed...'})
 
